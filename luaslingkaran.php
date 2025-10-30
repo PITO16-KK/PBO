@@ -3,34 +3,30 @@
 class LuasLingkaran {
 
     public const phi = 3.14;
-
     public int $jari;
-
-    public function __construct($isijari=1){
-        $this->jari = $isijari;
+    
+    public function __construct($isiJari = 1) {
+        $this->jari = $isiJari;
     }
 
-    public function tampil($nama = 'ban'){
+    public function tampil($nama = 'ban') {
         $rumus = LuasLingkaran::phi * ($this->jari * $this->jari);
-        echo "luas lingkaran {$nama} hasilnya adalah: {$rumus}";
-
+        echo "Lingkaran {$nama} hasilnya adalah: {$rumus}";
     }
 
-    public static function testing(){
+    public static function testing() {
         echo "<br/>";
-        echo "ini testing static";
+        echo "ini dari static";
     }
 
-    public function __destruct(){
+    public function __destruct() {
+        echo "<br/>";
         echo "udah ah cape";
     }
 }
-$lingkaran = new LuasLingkaran(10);
-//$lingkaran->jari = 10; //input nilai jari-jari
-$lingkaran->tampil('roda');
 
-LuasLingkaran::testing();
+$lingkaran = new LuasLingkaran(12);
+// $lingkaran->jari = 12;
+$lingkaran->tampil('roda'); //panggil method tampil
 
-//$rumus = LuasLingkaran :: phi * ($lingkaran->jari * $lingkaran->jari);
-
-//echo "Hasilnya adalah : " . $rumus;
+LuasLingkaran::testing(); //panggil static method
